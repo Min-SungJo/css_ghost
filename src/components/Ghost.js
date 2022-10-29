@@ -1,8 +1,13 @@
-import React from 'react'
-const Header = () => {
+import React, { useState } from 'react'
+const Ghost = () => {
 
+  const [xy,setXY]=useState({x:0,y:0})
+  const handlerMouseMove=(e)=>{
+    setXY({x:e.clientX,y:e.clientY});
+  }
   return (
-    <div className='ghost'>
+    <div onMouseMove={(e)=>handlerMouseMove(e)}>
+    <div className='ghost' style={{left:xy.x-50,top:xy.y-50}}>
       <div className='body'>
         <div className='face'>
           <div className='eye'></div>
@@ -18,7 +23,8 @@ const Header = () => {
         <div className='leg'></div>
       </div>
     </div>
+    </div>
   )
 }
 
-export default Header
+export default Ghost
