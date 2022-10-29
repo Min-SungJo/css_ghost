@@ -11,7 +11,7 @@ CSS, HTML, JS, REACT
 
 
 
-![ghost](https://github.com/Min-SungJo/pumpkin/issues/4#issue-1428318214)
+![198839971-f4cd798a-0887-4edd-aeee-7e66ac4d103c](https://user-images.githubusercontent.com/91239439/198840402-7f9eb5ea-17a9-48ca-bbc1-6a2c61d58aec.gif)
 
 HTML
 
