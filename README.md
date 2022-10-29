@@ -153,7 +153,6 @@ body {
         })
 ```
 
-
 **REACT**
 
 ```js
@@ -188,4 +187,5 @@ const Ghost = () => {
 
 export default Ghost
 ```
+
 
