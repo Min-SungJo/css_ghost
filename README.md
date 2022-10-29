@@ -11,7 +11,7 @@ CSS, HTML, JS, REACT
 
 
 
-![ghost](https://raw.githubusercontent.com/sunbongE/Helloween_CSS/master/Readme.assets/ghost.gif)
+![ghost](https://user-images.githubusercontent.com/91239439/198839971-f4cd798a-0887-4edd-aeee-7e66ac4d103c.mov)
 
 HTML
 
