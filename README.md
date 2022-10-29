@@ -1,70 +1,191 @@
-# Getting Started with Create React App
+# 
+# Helloween_ghost
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**사용 언어**
 
-## Available Scripts
+CSS, HTML, JS, REACT
 
-In the project directory, you can run:
+---
 
-### `npm start`
+마우스 커서의 위치를 입력받아 따라오게 보이는 유령 만들기.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+![ghost](https://raw.githubusercontent.com/sunbongE/Helloween_CSS/master/Readme.assets/ghost.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+HTML
 
-### `npm run build`
+```html
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<body>
+    <div class="ghost">
+        <div class="body">
+            <div class="face">
+                <div class="eye"></div>
+                <div class="eye"></div>
+                <div class="mouse"></div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+        </div>
+    </div>
+    <script>
+        document.body.addEventListener("mousemove", function (e) {
+            console.log(e.pageX);
+            document.querySelector('.ghost').style.left = e.pageX + 'px';
+            document.querySelector('.ghost').style.top = e.pageY + 'px';
+        })
+    </script>
+</body>
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+**CSS**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+.ghost {
+    animation: moveUpDown 3s infinite;
+    position: absolute;
+}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+@keyframes moveUpDown {
+    0% {
+        margin-top: 0px;
+    }
 
-## Learn More
+    50% {
+        margin-top: -50px;
+    }
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    100% {
+        margin-top: 0px;
+    }
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+.ghost .body {
+    width: 120px;
+    height: 160px;
+    background-color: #fff;
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+    position: relative;
+}
 
-### Code Splitting
+.ghost .body .face {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+.ghost .body .face .eye {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: #333;
+}
 
-### Analyzing the Bundle Size
+.ghost .body .face .mouse {
+    width: 33px;
+    height: 15px;
+    background-color: #333;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: 18px;
+    margin-top: 13px;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+.ghost .bottom {
+    display: flex;
 
-### Making a Progressive Web App
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+.ghost .bottom .leg {
+    background-color: #fff;
+    width: 24px;
+    height: 15px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
 
-### Advanced Configuration
+.ghost .bottom .leg:nth-child(2n) {
+    position: relative;
+    top: -6px;
+    background-color: #000;
+    border-radius: 50%;
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Js**
 
-### Deployment
+```js
+  document.body.addEventListener("mousemove", function (e) {
+            console.log(e.pageX);
+            document.querySelector('.ghost').style.left = e.pageX + 'px';
+            document.querySelector('.ghost').style.top = e.pageY + 'px';
+        })
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+**REACT**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```js
+import React, { useState } from 'react'
+const Ghost = () => {
+
+  const [xy,setXY]=useState({x:0,y:0})
+  const handlerMouseMove=(e)=>{
+    setXY({x:e.clientX,y:e.clientY});
+  }
+  return (
+    <div onMouseMove={(e)=>handlerMouseMove(e)}>
+    <div className='ghost' style={{left:xy.x-50,top:xy.y-50}}>
+      <div className='body'>
+        <div className='face'>
+          <div className='eye'></div>
+          <div className='eye'></div>
+          <div className='mouse'></div>
+        </div>
+      </div>
+      <div className='bottom'>
+        <div className='leg'></div>
+        <div className='leg'></div>
+        <div className='leg'></div>
+        <div className='leg'></div>
+        <div className='leg'></div>
+      </div>
+    </div>
+    </div>
+  )
+}
+
+export default Ghost
+```
+
