@@ -1,5 +1,5 @@
 # 
-# Helloween_ghost
+# Halloween_ghost
 
 **사용 언어**
 
